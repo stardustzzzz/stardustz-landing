@@ -1,0 +1,18 @@
+fragment PageParts on Page {
+  body
+}
+
+fragment PostParts on Post {
+  hero
+  title
+  body
+}
+
+fragment PresentationParts on Presentation {
+  sectopm {
+    __typename
+    title
+    price
+    image
+  }
+}
