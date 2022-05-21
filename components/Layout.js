@@ -9,19 +9,10 @@ export const Layout = (props) => {
       }}
     >
       <Head>
-        <title>Tina App</title>
-        <meta name="description" content="A TinaCMS Application" />
+        <title>Stardust DAO</title>
+        <meta name="description" content="Stardust DAO App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        {' | '}
-        <Link href="/posts">
-          <a>Posts</a>
-        </Link>
-      </header>
       <main>{props.children}</main>
     </div>
   )

@@ -3,6 +3,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
 import Header from '../components/Header';
+import Donate from '../components/Donate';
 
 const query = `{
   page(relativePath: "home.mdx"){
@@ -22,6 +23,7 @@ export default function Home(props) {
   return (
     <Layout>
       <Header />
+      <Donate />
       <TinaMarkdown content={content} />
     </Layout>
   );
