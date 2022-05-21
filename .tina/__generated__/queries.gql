@@ -67,38 +67,3 @@ query postConnection {
     }
   }
 }
-
-query presentation($relativePath: String!) {
-  presentation(relativePath: $relativePath) {
-    _sys {
-      filename
-      basename
-      breadcrumbs
-      path
-      relativePath
-      extension
-    }
-    id
-    ...PresentationParts
-  }
-}
-
-query presentationConnection {
-  presentationConnection {
-    totalCount
-    edges {
-      node {
-        id
-        _sys {
-          filename
-          basename
-          breadcrumbs
-          path
-          relativePath
-          extension
-        }
-        ...PresentationParts
-      }
-    }
-  }
-}

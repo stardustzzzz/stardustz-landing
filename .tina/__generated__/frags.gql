@@ -3,16 +3,15 @@ fragment PageParts on Page {
 }
 
 fragment PostParts on Post {
-  hero
-  title
-  body
-}
-
-fragment PresentationParts on Presentation {
-  sectopm {
+  sections {
     __typename
     title
     price
+    right
+    left
     image
   }
+  image
+  title
+  body
 }
