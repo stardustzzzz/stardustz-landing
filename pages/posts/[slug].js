@@ -42,7 +42,7 @@ export default function Home(props) {
                     src={section.image}
                     alt="Landscape picture"
 
-                    objectFit="contain"
+                  
                   />
 
                 </div>
