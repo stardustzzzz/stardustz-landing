@@ -5,14 +5,15 @@ module.exports = {
     mocha: true,
     node: true,
   },
-  extends: [
-    "standard",
-    "plugin:prettier/recommended",
-    "plugin:node/recommended",
-  ],
+  extends: "next",
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 12,
+  },
+  rules: {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+
   },
   overrides: [
     {
