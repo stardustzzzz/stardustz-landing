@@ -70,6 +70,8 @@ export type Query = {
   pageConnection: PageConnection;
   post: Post;
   postConnection: PostConnection;
+  presentation: Presentation;
+  presentationConnection: PresentationConnection;
 };
 
 
@@ -121,6 +123,20 @@ export type QueryPostConnectionArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
+
+export type QueryPresentationArgs = {
+  relativePath?: InputMaybe<Scalars['String']>;
+};
+
+
+export type QueryPresentationConnectionArgs = {
+  before?: InputMaybe<Scalars['String']>;
+  after?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Float']>;
+  last?: InputMaybe<Scalars['Float']>;
+  sort?: InputMaybe<Scalars['String']>;
+};
+
 export type DocumentConnectionEdges = {
   __typename?: 'DocumentConnectionEdges';
   cursor: Scalars['String'];
@@ -156,7 +172,7 @@ export type CollectionDocumentsArgs = {
   sort?: InputMaybe<Scalars['String']>;
 };
 
-export type DocumentNode = Page | Post;
+export type DocumentNode = Page | Post | Presentation;
 
 export type Page = Node & Document & {
   __typename?: 'Page';
@@ -181,6 +197,7 @@ export type PageConnection = Connection & {
 
 export type Post = Node & Document & {
   __typename?: 'Post';
+  hero?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -201,6 +218,34 @@ export type PostConnection = Connection & {
   edges?: Maybe<Array<Maybe<PostConnectionEdges>>>;
 };
 
+export type PresentationSectopm = {
+  __typename?: 'PresentationSectopm';
+  title?: Maybe<Scalars['String']>;
+  price?: Maybe<Scalars['Float']>;
+  image?: Maybe<Scalars['String']>;
+};
+
+export type Presentation = Node & Document & {
+  __typename?: 'Presentation';
+  sectopm?: Maybe<Array<Maybe<PresentationSectopm>>>;
+  id: Scalars['ID'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON'];
+};
+
+export type PresentationConnectionEdges = {
+  __typename?: 'PresentationConnectionEdges';
+  cursor: Scalars['String'];
+  node?: Maybe<Presentation>;
+};
+
+export type PresentationConnection = Connection & {
+  __typename?: 'PresentationConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float'];
+  edges?: Maybe<Array<Maybe<PresentationConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -211,6 +256,8 @@ export type Mutation = {
   createPage: Page;
   updatePost: Post;
   createPost: Post;
+  updatePresentation: Presentation;
+  createPresentation: Presentation;
 };
 
 
@@ -264,9 +311,22 @@ export type MutationCreatePostArgs = {
   params: PostMutation;
 };
 
+
+export type MutationUpdatePresentationArgs = {
+  relativePath: Scalars['String'];
+  params: PresentationMutation;
+};
+
+
+export type MutationCreatePresentationArgs = {
+  relativePath: Scalars['String'];
+  params: PresentationMutation;
+};
+
 export type DocumentMutation = {
   page?: InputMaybe<PageMutation>;
   post?: InputMaybe<PostMutation>;
+  presentation?: InputMaybe<PresentationMutation>;
 };
 
 export type PageMutation = {
@@ -274,13 +334,26 @@ export type PageMutation = {
 };
 
 export type PostMutation = {
+  hero?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   body?: InputMaybe<Scalars['String']>;
 };
 
+export type PresentationSectopmMutation = {
+  title?: InputMaybe<Scalars['String']>;
+  price?: InputMaybe<Scalars['Float']>;
+  image?: InputMaybe<Scalars['String']>;
+};
+
+export type PresentationMutation = {
+  sectopm?: InputMaybe<Array<InputMaybe<PresentationSectopmMutation>>>;
+};
+
 export type PagePartsFragment = { __typename?: 'Page', body?: any | null | undefined };
 
-export type PostPartsFragment = { __typename?: 'Post', title?: string | null | undefined, body?: string | null | undefined };
+export type PostPartsFragment = { __typename?: 'Post', hero?: string | null | undefined, title?: string | null | undefined, body?: string | null | undefined };
+
+export type PresentationPartsFragment = { __typename?: 'Presentation', sectopm?: Array<{ __typename: 'PresentationSectopm', title?: string | null | undefined, price?: number | null | undefined, image?: string | null | undefined } | null | undefined> | null | undefined };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -299,12 +372,24 @@ export type PostQueryVariables = Exact<{
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, title?: string | null | undefined, body?: string | null | undefined, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, hero?: string | null | undefined, title?: string | null | undefined, body?: string | null | undefined, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PostConnectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', id: string, title?: string | null | undefined, body?: string | null | undefined, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null | undefined } | null | undefined> | null | undefined } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', id: string, hero?: string | null | undefined, title?: string | null | undefined, body?: string | null | undefined, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null | undefined } | null | undefined> | null | undefined } };
+
+export type PresentationQueryVariables = Exact<{
+  relativePath: Scalars['String'];
+}>;
+
+
+export type PresentationQuery = { __typename?: 'Query', presentation: { __typename?: 'Presentation', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sectopm?: Array<{ __typename: 'PresentationSectopm', title?: string | null | undefined, price?: number | null | undefined, image?: string | null | undefined } | null | undefined> | null | undefined } };
+
+export type PresentationConnectionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PresentationConnectionQuery = { __typename?: 'Query', presentationConnection: { __typename?: 'PresentationConnection', totalCount: number, edges?: Array<{ __typename?: 'PresentationConnectionEdges', node?: { __typename?: 'Presentation', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sectopm?: Array<{ __typename: 'PresentationSectopm', title?: string | null | undefined, price?: number | null | undefined, image?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined } | null | undefined> | null | undefined } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
@@ -313,8 +398,19 @@ export const PagePartsFragmentDoc = gql`
     `;
 export const PostPartsFragmentDoc = gql`
     fragment PostParts on Post {
+  hero
   title
   body
+}
+    `;
+export const PresentationPartsFragmentDoc = gql`
+    fragment PresentationParts on Presentation {
+  sectopm {
+    __typename
+    title
+    price
+    image
+  }
 }
     `;
 export const PageDocument = gql`
@@ -391,6 +487,43 @@ export const PostConnectionDocument = gql`
   }
 }
     ${PostPartsFragmentDoc}`;
+export const PresentationDocument = gql`
+    query presentation($relativePath: String!) {
+  presentation(relativePath: $relativePath) {
+    _sys {
+      filename
+      basename
+      breadcrumbs
+      path
+      relativePath
+      extension
+    }
+    id
+    ...PresentationParts
+  }
+}
+    ${PresentationPartsFragmentDoc}`;
+export const PresentationConnectionDocument = gql`
+    query presentationConnection {
+  presentationConnection {
+    totalCount
+    edges {
+      node {
+        id
+        _sys {
+          filename
+          basename
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        ...PresentationParts
+      }
+    }
+  }
+}
+    ${PresentationPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -405,6 +538,12 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     postConnection(variables?: PostConnectionQueryVariables, options?: C): Promise<{data: PostConnectionQuery, variables: PostConnectionQueryVariables, query: string}> {
         return requester<{data: PostConnectionQuery, variables: PostConnectionQueryVariables, query: string}, PostConnectionQueryVariables>(PostConnectionDocument, variables, options);
+      },
+    presentation(variables: PresentationQueryVariables, options?: C): Promise<{data: PresentationQuery, variables: PresentationQueryVariables, query: string}> {
+        return requester<{data: PresentationQuery, variables: PresentationQueryVariables, query: string}, PresentationQueryVariables>(PresentationDocument, variables, options);
+      },
+    presentationConnection(variables?: PresentationConnectionQueryVariables, options?: C): Promise<{data: PresentationConnectionQuery, variables: PresentationConnectionQueryVariables, query: string}> {
+        return requester<{data: PresentationConnectionQuery, variables: PresentationConnectionQueryVariables, query: string}, PresentationConnectionQueryVariables>(PresentationConnectionDocument, variables, options);
       }
     };
   }

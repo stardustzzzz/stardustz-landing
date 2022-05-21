@@ -1,7 +1,7 @@
 import { defineConfig, defineSchema } from "tinacms";
 
 const schema = defineSchema({
-  collections: [
+  collections: [ 
     {
       label: "Page Content",
       name: "page",
@@ -14,6 +14,7 @@ const schema = defineSchema({
           type: "rich-text",
           isBody: true,
         },
+
       ],
     },
     {
@@ -21,6 +22,11 @@ const schema = defineSchema({
       name: "post",
       path: "content/post",
       fields: [
+        {
+          name: 'hero',
+          type: 'image',
+          label: 'Hero Image',
+        },
         {
           type: "string",
           label: "Title",
@@ -37,8 +43,40 @@ const schema = defineSchema({
         },
       ],
     },
-  ],
+
+    {
+      label: "Presentation",
+      name: "presentation",
+      path: "presentations",
+      fields: [
+        {
+          label: "Section",
+          name: "sectopm",
+          type: "object",
+          list: true,
+          fields: [
+
+            {
+              label: "Title",
+              name: "title",
+              type: "string"
+            }, {
+              label: "Price",
+              name: "price",
+              type: "number"
+            },
+            {
+              label: "Image",
+              name: "image",
+              type: "image"
+            },
+
+
+          ]
+        },]
+    }]
 });
+
 
 export default schema;
 
@@ -50,6 +88,11 @@ const apiURL =
 
 export const tinaConfig = defineConfig({
   apiURL,
+  mediaStore: async () => {
+    // Load media store dynamically so it only loads in edit mode
+    const pack = await import("next-tinacms-cloudinary");
+    return pack.TinaCloudCloudinaryMediaStore;
+  },
   schema,
   cmsCallback: (cms) => {
     import("tinacms").then(({ RouteMappingPlugin }) => {
@@ -66,7 +109,6 @@ export const tinaConfig = defineConfig({
 
         return undefined;
       });
-
       cms.plugins.add(RouteMapping);
     });
     return cms;

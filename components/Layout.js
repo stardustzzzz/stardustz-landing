@@ -4,9 +4,7 @@ import Head from 'next/head'
 export const Layout = (props) => {
   return (
     <div
-      style={{
-        margin: '3rem',
-      }}
+     
     >
       <Head>
         <title>Tina App</title>
@@ -14,15 +12,10 @@ export const Layout = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        {' | '}
-        <Link href="/posts">
-          <a>Posts</a>
-        </Link>
+        
       </header>
       <main>{props.children}</main>
+      <footer></footer>
     </div>
   )
 }

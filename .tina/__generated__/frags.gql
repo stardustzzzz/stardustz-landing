@@ -3,6 +3,16 @@ fragment PageParts on Page {
 }
 
 fragment PostParts on Post {
+  hero
   title
   body
+}
+
+fragment PresentationParts on Presentation {
+  sectopm {
+    __typename
+    title
+    price
+    image
+  }
 }

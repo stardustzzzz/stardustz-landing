@@ -51,6 +51,8 @@ type Query {
   pageConnection(before: String, after: String, first: Float, last: Float, sort: String): PageConnection!
   post(relativePath: String): Post!
   postConnection(before: String, after: String, first: Float, last: Float, sort: String): PostConnection!
+  presentation(relativePath: String): Presentation!
+  presentationConnection(before: String, after: String, first: Float, last: Float, sort: String): PresentationConnection!
 }
 
 type DocumentConnectionEdges {
@@ -76,7 +78,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String): DocumentConnection!
 }
 
-union DocumentNode = Page | Post
+union DocumentNode = Page | Post | Presentation
 
 type Page implements Node & Document {
   body: JSON
@@ -97,6 +99,7 @@ type PageConnection implements Connection {
 }
 
 type Post implements Node & Document {
+  hero: String
   title: String
   body: String
   id: ID!
@@ -115,6 +118,30 @@ type PostConnection implements Connection {
   edges: [PostConnectionEdges]
 }
 
+type PresentationSectopm {
+  title: String
+  price: Float
+  image: String
+}
+
+type Presentation implements Node & Document {
+  sectopm: [PresentationSectopm]
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+type PresentationConnectionEdges {
+  cursor: String!
+  node: Presentation
+}
+
+type PresentationConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [PresentationConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentMutation!): DocumentNode!
@@ -124,11 +151,14 @@ type Mutation {
   createPage(relativePath: String!, params: PageMutation!): Page!
   updatePost(relativePath: String!, params: PostMutation!): Post!
   createPost(relativePath: String!, params: PostMutation!): Post!
+  updatePresentation(relativePath: String!, params: PresentationMutation!): Presentation!
+  createPresentation(relativePath: String!, params: PresentationMutation!): Presentation!
 }
 
 input DocumentMutation {
   page: PageMutation
   post: PostMutation
+  presentation: PresentationMutation
 }
 
 input PageMutation {
@@ -136,8 +166,19 @@ input PageMutation {
 }
 
 input PostMutation {
+  hero: String
   title: String
   body: String
+}
+
+input PresentationSectopmMutation {
+  title: String
+  price: Float
+  image: String
+}
+
+input PresentationMutation {
+  sectopm: [PresentationSectopmMutation]
 }
 
 schema {
