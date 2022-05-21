@@ -5,7 +5,24 @@ import '@openzeppelin/contracts/token/ERC721/utils/ERC721Holder';
 
 contract Vault is ERC721Holder {
 
-    function acceptERC721Donation() public {
+    address payable public owner;
+
+    constructor(address _owner) {
+        owner = payable(_owner);
+    }
+
+    mapping (address => Donation) addressToDonation;
+
+    struct Donation {
         
+    }
+
+    function acceptERC721Donation() public {
+
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "OO0");
+        _;
     }
 }
