@@ -14,6 +14,12 @@ module.exports = {
     sourceType: "module",
     ecmaVersion: 12,
   },
+  rules: {
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      { ignores: ["modules"] },
+    ],
+  },
   overrides: [
     {
       files: ["hardhat.config.js"],
