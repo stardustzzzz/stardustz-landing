@@ -1,7 +1,7 @@
 import TinaProvider from "../.tina/components/TinaDynamicProvider";
 import { Web3ReactProvider } from "@web3-react/core";
 import { ethers } from "ethers";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider);
