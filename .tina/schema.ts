@@ -1,7 +1,7 @@
 import { defineConfig, defineSchema } from "tinacms";
 
 const schema = defineSchema({
-  collections: [ 
+  collections: [
     {
       label: "Page Content",
       name: "page",
