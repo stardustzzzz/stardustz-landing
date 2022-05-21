@@ -3,8 +3,9 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import '@openzeppelin/contracts/token/ERC721/utils/ERC721Holder';
-import './interfaces/IStardustToken';
+import '@openzeppelin/contracts/token/ERC721/utils/ERC721Holder.sol';
+import './interfaces/IStardustToken.sol';
+import './interfaces/IChargedParticles.sol';
 
 contract ERC721Donations {
     using Counters for Counters.Counter;
@@ -20,10 +21,11 @@ contract ERC721Donations {
     struct Donation {
         uint donationId;
         address donor;
-        string charityId;
+        uint charityId;
         address erc721Address;
         uint tokenId;
         string donationDate;
+        DonationState state;
     }
 
     Donation[] public list;
@@ -34,19 +36,29 @@ contract ERC721Donations {
         stardustToken = payable(_stardustToken);
     }
 
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "only admin");
+        _;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "only owner");
+        _;
+    }
+
     function createDonation(
         address donor,
-        uint memory charityId,
+        uint charityId,
         address erc721Address,
-        string memory tokenId,
+        uint tokenId,
         string memory donationDate
     ) public {
         _donationId.increment();
         uint donationId = _donationId.current();
-        self.list.push(Donation({
+        list.push(Donation({
             donationId: donationId,
-            donor: msg.sender,
-            charityId: "global",
+            donor: donor,
+            charityId: charityId,
             erc721Address: erc721Address,
             tokenId: tokenId,
             donationDate: donationDate,
@@ -55,13 +67,13 @@ contract ERC721Donations {
     }
 
     function fetchDonationsList() public view returns (Donation[] memory) {
-        return self.list;
+        return list;
     }
 
     function depositDonationIntoBasket(
         uint donationId,
         address basketTokenAddress,
-        string basketTokenId,
+        uint basketTokenId,
         string calldata basketManagerId,
         address cpAddress,
         uint nftTokenAmount
