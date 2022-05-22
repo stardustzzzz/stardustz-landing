@@ -70,6 +70,16 @@ const schema = defineSchema({
         },
         {
           type: "string",
+          label: "Top marquee",
+          name: "top",
+        },
+        {
+          type: "string",
+          label: "Bottom marquee",
+          name: "bottom",
+        },
+        {
+          type: "string",
           label: "Blog Post Body",
           name: "body",
           isBody: true,

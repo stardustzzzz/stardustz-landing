@@ -200,6 +200,8 @@ export type Post = Node & Document & {
   sections?: Maybe<Array<Maybe<PostSections>>>;
   image?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  top?: Maybe<Scalars['String']>;
+  bottom?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   _sys: SystemInfo;
@@ -303,12 +305,14 @@ export type PostMutation = {
   sections?: InputMaybe<Array<InputMaybe<PostSectionsMutation>>>;
   image?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
+  top?: InputMaybe<Scalars['String']>;
+  bottom?: InputMaybe<Scalars['String']>;
   body?: InputMaybe<Scalars['String']>;
 };
 
 export type PagePartsFragment = { __typename?: 'Page', body?: any | null };
 
-export type PostPartsFragment = { __typename?: 'Post', image?: string | null, title?: string | null, body?: string | null, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null };
+export type PostPartsFragment = { __typename?: 'Post', image?: string | null, title?: string | null, top?: string | null, bottom?: string | null, body?: string | null, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null };
 
 export type PageQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -327,12 +331,12 @@ export type PostQueryVariables = Exact<{
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, image?: string | null, title?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null } };
+export type PostQuery = { __typename?: 'Query', post: { __typename?: 'Post', id: string, image?: string | null, title?: string | null, top?: string | null, bottom?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null } };
 
 export type PostConnectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', id: string, image?: string | null, title?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null } | null } | null> | null } };
+export type PostConnectionQuery = { __typename?: 'Query', postConnection: { __typename?: 'PostConnection', totalCount: number, edges?: Array<{ __typename?: 'PostConnectionEdges', node?: { __typename?: 'Post', id: string, image?: string | null, title?: string | null, top?: string | null, bottom?: string | null, body?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, sections?: Array<{ __typename: 'PostSections', title?: string | null, price?: string | null, right?: string | null, left?: string | null, image?: string | null } | null> | null } | null } | null> | null } };
 
 export const PagePartsFragmentDoc = gql`
     fragment PageParts on Page {
@@ -351,6 +355,8 @@ export const PostPartsFragmentDoc = gql`
   }
   image
   title
+  top
+  bottom
   body
 }
     `;

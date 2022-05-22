@@ -13,5 +13,7 @@ fragment PostParts on Post {
   }
   image
   title
+  top
+  bottom
   body
 }

@@ -109,6 +109,8 @@ type Post implements Node & Document {
   sections: [PostSections]
   image: String
   title: String
+  top: String
+  bottom: String
   body: String
   id: ID!
   _sys: SystemInfo!
@@ -158,6 +160,8 @@ input PostMutation {
   sections: [PostSectionsMutation]
   image: String
   title: String
+  top: String
+  bottom: String
   body: String
 }
 
