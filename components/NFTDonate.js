@@ -1,21 +1,22 @@
 import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    Button,
-    useDisclosure
-  } from '@chakra-ui/react'
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  useDisclosure
+} from '@chakra-ui/react'
 
 
 const NFTDonate = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      <Button onClick={onOpen}>Donate NFT</Button>
+
+      <button onClick={onOpen} className="text-3xl font-bold text-right uppercase  btn-success pxl-lg btn"> Donate NFT</button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -23,7 +24,7 @@ const NFTDonate = () => {
           <ModalHeader>Donate NFT</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-              Donate NFT
+            Donate NFT
           </ModalBody>
 
           <ModalFooter>

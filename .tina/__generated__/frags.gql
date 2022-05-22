@@ -10,6 +10,7 @@ fragment PostParts on Post {
     right
     left
     image
+    color
   }
   doge
   title

@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { staticRequest } from "tinacms";
 import { Layout } from "../../components/Layout";
+import NFTDonate from "../../components/NFTDonate";
+import Donate from "../../components/Donate";
 import { useTina } from "tinacms/dist/edit-state";
 import Marquee from "react-fast-marquee";
 const query = `query getPost($relativePath: String!) {
@@ -14,6 +16,7 @@ const query = `query getPost($relativePath: String!) {
       title
       price
       image
+      color
       left
       right
     }
@@ -35,7 +38,7 @@ export default function Home(props) {
         <div className="fixed top-0 left-0 right-0 h-20 bg-white marquee-top b ">
 
           <Marquee gradient={false}>
-            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-red-500">
+            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-red-500 pxl">
               {data.post.top}
             </span>
 
@@ -48,17 +51,17 @@ export default function Home(props) {
               <div className="flex flex-col w-full py-4 xl:flex-row ">
                 <div className="flex items-center h-full p-2 xl:w-2/3">
                   <img
+                    style={{ background: section.color }}
                     src={section.image}
                     alt="Landscape picture"
                   />
                 </div>
                 <div className="flex flex-col items-end h-full xl:w-1/3 ">
                   <div className="flex flex-col items-end justify-end">
-                    <h2 className="pt-4 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black"> {section.title} </span></h2>
+                    <h2 className="pt-4 mb-8 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black pxl"> {section.title} </span></h2>
 
-
-                    <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span>
-
+                    {section.price === "donate" ? <Donate /> : null}
+                    {section.price === "nftdonate" ? <NFTDonate /> : null}
 
                     <div className="flex flex-row my-4 font-semibold text-right">
                       <div className="px-2">
@@ -76,7 +79,7 @@ export default function Home(props) {
         </div>
         <div className="fixed bottom-0 left-0 right-0 h-20 bg-white marquee-bottom ">
           <Marquee gradient={false} direction="right">
-            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-black" >
+            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-black pxl" >
               {data.post.bottom}
             </span>
           </Marquee>
@@ -84,14 +87,14 @@ export default function Home(props) {
       </div>
 
       <div className="fixed bottom-0 flex justify-end left-8">
-        <div className="absolute max-w-xs px-8 py-4 -mt-20 -mr-40 font-semibold text-right bg-white rounded-full">
+        <div className="absolute max-w-xs px-8 py-4 -mt-0 -mr-32 font-semibold text-right bg-white rounded-full shadow-md">
           <span className="text-lg" > {data.post.body}</span>
         </div>
 
         <img
           className="w-80"
           src={data.post.doge}
-          alt="Landscape picture"
+          alt="doge"
         />
       </div>
 
