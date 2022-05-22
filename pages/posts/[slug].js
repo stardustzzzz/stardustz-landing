@@ -51,17 +51,17 @@ export default function Home(props) {
               <div className="flex flex-col w-full py-4 xl:flex-row ">
                 <div className="flex items-center h-full p-2 xl:w-2/3">
                   <img
+                    style={{ background: section.color }}
                     src={section.image}
                     alt="Landscape picture"
                   />
                 </div>
                 <div className="flex flex-col items-end h-full xl:w-1/3 ">
                   <div className="flex flex-col items-end justify-end">
-                    <h2 className="pt-4 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black"> {section.title} </span></h2>
+                    <h2 className="pt-4 mb-8 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black "> {section.title} </span></h2>
 
-                    {/* <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span> */}
-                    {section.price === "1" ? <Donate /> : null}
-                    {section.price === "2" ? <NFTDonate /> : null}
+                    {section.price === "donate" ? <Donate /> : null}
+                    {section.price === "nftdonate" ? <NFTDonate /> : null}
 
                     <div className="flex flex-row my-4 font-semibold text-right">
                       <div className="px-2">
