@@ -33,6 +33,13 @@ module.exports = {
       url: `https://icy-sparkling-voice.matic-testnet.quiknode.pro/${process.env.QUICKNODE_KEY}/`,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    hardhat: {
+      accounts: {
+        mnemonic: "test test test test test test test test test test test junk",
+        initialIndex: 0,
+        count: 3,
+    }
     }
   },
   gasReporter: {

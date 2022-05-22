@@ -4,6 +4,7 @@ import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
 import Header from '../components/Header';
 import Donate from '../components/Donate';
+import NFTDonate from '../components/NFTDonate';
 
 const query = `{
   page(relativePath: "home.mdx"){
@@ -24,6 +25,7 @@ export default function Home(props) {
     <Layout>
       <Header />
       <Donate />
+      <NFTDonate />
       <TinaMarkdown content={content} />
     </Layout>
   );

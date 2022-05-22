@@ -6,6 +6,25 @@
 const hre = require("hardhat");
 
 async function main() {
+
+  const isDev  = true;
+
+  if (isDev) {
+    const ERC721Test1 = await hre.ethers.getContractFactory("ERC721Test1");
+    const eRC721Test1 = await ERC721Test1.deploy();
+  
+    await eRC721Test1.deployed();
+  
+    console.log("ERC721Test1 deployed to:", eRC721Test1.address);
+
+    const ERC721Test2 = await hre.ethers.getContractFactory("ERC721Test2");
+    const eRC721Test2 = await ERC721Test2.deploy();
+  
+    await eRC721Test2.deployed();
+  
+    console.log("ERC721Test2 deployed to:", eRC721Test2.address);
+
+  }
   
   const StardustToken = await hre.ethers.getContractFactory("StardustToken");
   const stardustToken = await StardustToken.deploy();

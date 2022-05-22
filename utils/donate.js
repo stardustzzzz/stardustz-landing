@@ -26,7 +26,6 @@ const donate = (provider, tokenAddress, tokenId) => {
     console.log("tx:", tx);
     if (tx.events.length < 1) {
         console.error('tx has no events. tx: ', tx);
-        return;
     }
 }
 
