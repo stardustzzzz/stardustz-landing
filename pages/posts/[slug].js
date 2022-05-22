@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { staticRequest } from "tinacms";
 import { Layout } from "../../components/Layout";
+import NFTDonate from "../../components/NFTDonate";
+import Donate from "../../components/Donate";
 import { useTina } from "tinacms/dist/edit-state";
 import Marquee from "react-fast-marquee";
 const query = `query getPost($relativePath: String!) {
@@ -56,9 +58,9 @@ export default function Home(props) {
                   <div className="flex flex-col items-end justify-end">
                     <h2 className="pt-4 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black"> {section.title} </span></h2>
 
-
-                    <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span>
-
+                    {/* <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span> */}
+                    {section.price === "1" ? <Donate /> : null}
+                    {section.price === "2" ? <NFTDonate /> : null}
 
                     <div className="flex flex-row my-4 font-semibold text-right">
                       <div className="px-2">

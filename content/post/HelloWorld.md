@@ -1,7 +1,7 @@
 ---
 sections:
   - title: JOIN INVESTOR WEB3 WALLET
-    price: DONATE
+    price: '2'
     right: >
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
       dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -43,6 +43,7 @@ title: 'Hello, World!'
 top: "GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B "
 bottom: "\U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION \U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION "
 ---
+
 
 
 Hello!
