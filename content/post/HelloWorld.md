@@ -26,7 +26,7 @@ sections:
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653170002/Egypt-1_zkkczb.jpg
   - title: Join investor web3 wallet
-    price: Donate
+    price: ''
     right: >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
