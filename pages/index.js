@@ -5,6 +5,7 @@ import { useTina } from "tinacms/dist/edit-state";
 import Header from '../components/Header';
 import Donate from '../components/Donate';
 import NFTDonate from '../components/NFTDonate';
+import MintNFT from '../components/MintNFT';
 
 const query = `{
   page(relativePath: "home.mdx"){
@@ -26,6 +27,7 @@ export default function Home(props) {
       <Header />
       <Donate />
       <NFTDonate />
+      <MintNFT />
       <TinaMarkdown content={content} />
     </Layout>
   );
