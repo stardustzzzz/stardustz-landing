@@ -16,9 +16,7 @@ const NFTDonate = () => {
   return (
     <>
 
-      <Button onClick={onOpen} background={"transparent"}>
-        <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> Donate NFT</span>
-      </Button>
+      <button onClick={onOpen} className="text-3xl font-bold text-right uppercase  btn-success pxl-lg btn"> Donate NFT</button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
