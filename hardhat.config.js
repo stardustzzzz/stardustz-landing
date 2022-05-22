@@ -36,7 +36,7 @@ module.exports = {
     },
     hardhat: {
       accounts: {
-        mnemonic: "test test test test test test test test test test test junk",
+        mnemonic: process.env.TESTNET_MNEMONIC,
         initialIndex: 0,
         count: 3,
     }
