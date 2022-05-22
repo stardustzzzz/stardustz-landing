@@ -14,7 +14,7 @@ sections:
     right: >
       Give purpose to your NFTs. From a regretted purchase to a valued donation item. Donated NFTs are sorted into baskets, combining a variety of NFTs.
     left: >
-      Get curious about the mystery of NFTs adn discover what you could potentially win by donating to non-profits.
+      Get curious about the mystery of NFTs and discover what you could potentially win by donating to non-profits.
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653198984/cryptopunk_jfsxji.png
     color: '#ffff00'
