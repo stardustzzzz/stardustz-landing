@@ -6,10 +6,8 @@ sections:
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
       dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    left: >
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-      dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    left: |+
+
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
     color: '#9aff00'
