@@ -6,6 +6,9 @@ import CoinsDonate from "../../components/CoinsDonate";
 import { useTina } from "tinacms/dist/edit-state";
 import Marquee from "react-fast-marquee";
 import ConnectWallet from '../../components/ConnectWallet';
+import CharityJoin from '../../components/CharityJoin';
+import AllocateChairty from '../../components/AllocateChairty';
+import { useState } from 'react';
 
 const query = `query getPost($relativePath: String!) {
   post(relativePath: $relativePath) {
@@ -28,6 +31,7 @@ const query = `query getPost($relativePath: String!) {
 
 
 export default function Home(props) {
+  const [isDogeOpen, setIsDogeOpen] = useState(false);
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({
     query,
@@ -38,7 +42,8 @@ export default function Home(props) {
 
   function toggleDoge() {
     dogeOpen = !dogeOpen;
-    console.log("dogeOpen", dogeOpen);
+    console.log("dogeOpen", isDogeOpen);
+    setIsDogeOpen(!isDogeOpen)
   }
 
   return (
@@ -71,6 +76,8 @@ export default function Home(props) {
 
                     {section.price === "donatecoins" ? <CoinsDonate /> : null}
                     {section.price === "nftdonate" ? <NFTDonate /> : null}
+                    {section.price === "charityjoin" ? <CharityJoin /> : null}
+                    {section.price === "allocate" ? <AllocateChairty /> : null}
 
                     <div className="flex flex-col my-4 font-semibold text-right">
                       <div className="px-2">
@@ -96,9 +103,9 @@ export default function Home(props) {
         </div>
       </div>
 
-      <div className="fixed bottom-0 flex justify-end left-8">
-        <div className={`absolute max-w-xs px-8 py-4  -mr-20 font-semibold text-right bg-white border-4 border-black`} >
-          <span className="text-lg pxl" > {data.post.body}</span>
+      <div className="fixed bottom-0 flex justify-end left-8" >
+        <div style={{ display: isDogeOpen ? 'block' : 'none' }} className={`absolute max-w-xs px-8 py-4  -mr-20 font-semibold text-right bg-white border-4 border-black`} >
+          <span className="text-sm pxl" > {data.post.body}</span>
         </div>
         <img onClick={toggleDoge} className="cursor-pointer w-44" src={data.post.doge} alt="Doge" />
       </div>

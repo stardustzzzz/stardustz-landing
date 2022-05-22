@@ -25,22 +25,19 @@ sections:
       Give and recieve! Win one of the unrevealed baskets of NFTs whle the money from your raffle ticket purchase becomes a donation.
     # 
     left: >
-      ALLOCATE TO CHARITIES
       The newly valued NFTs have been bought by donors that are now part of a community coming together for the greater good. This community has the power of vote on how to distribute the money collected.
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
-    color: turquoise
+    color: blue
   - title: Come Together, Right now
     price: charityjoin
     # buy raffle tickt button
     right: >
-      JOIN AS A CHARITY
       On a global scale, Blockchain can increase donations for the charities all the while raising positive awareness for crypto. Merging these two massive and influential communities to take action for a better world.
-    # 
     left: >
       Get in touch with us to discuss the future!
     image: >-
-      https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
+      https://res.cloudinary.com/dptakoqe5/image/upload/v1653198984/cryptopunk_jfsxji.png
     color: turquoise
 doge: 'https://res.cloudinary.com/dptakoqe5/image/upload/v1653187995/doge_tlqzzv.png'
 title: 'Hello, World!'
@@ -57,4 +54,4 @@ bottom: " GIVE NFTS A PURPOSE💲🚀🤑 MAKE THE WORLD A BETTER PLACE 💲🚀
 
 
 
-Hello!
+Next thing, I buy Elon Musk to distribute his money to the poor.
