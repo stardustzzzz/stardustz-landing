@@ -38,20 +38,10 @@ sections:
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653170002/Egypt-1_zkkczb.jpg
-image: ''
+doge: 'https://res.cloudinary.com/dptakoqe5/image/upload/v1653180547/doge_oodiip.jpg'
 title: 'Hello, World!'
 top: "GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B "
 bottom: "\U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION \U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION "
 ---
 
-
-
-
-
-
-
-
-
-
-
-Edit me!
+Hello!

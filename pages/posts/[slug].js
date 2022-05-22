@@ -7,7 +7,7 @@ const query = `query getPost($relativePath: String!) {
   post(relativePath: $relativePath) {
     title
     body
-    image
+    doge
     top
     bottom
     sections{
@@ -28,35 +28,35 @@ export default function Home(props) {
     variables: props.variables,
     data: props.data,
   });
-  console.log(data);
+
   return (
     <Layout>
-      <div className="flex h-screen flex-col">
-        <div className="marquee-top fixed top-0 left-0 right-0 h-20 b bg-white ">
-          
-        <Marquee gradient={false}>
-        <span className="h-20 text-5xl flex items-center justify-center px-8 text-red-500 font-bold">
-          {data.post.top}
-          </span>
+      <div className="flex flex-col h-screen">
+        <div className="fixed top-0 left-0 right-0 h-20 bg-white marquee-top b ">
 
-        </Marquee>
+          <Marquee gradient={false}>
+            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-red-500">
+              {data.post.top}
+            </span>
+
+          </Marquee>
         </div>
 
-        <div className="main flex-grow overflow-y-auto   py-20">
+        <div className="flex-grow py-20 overflow-y-auto main">
           {data.post.sections.map((section) => (
             <div key={section.title} className="px-2">
-              <div className="flex py-4 w-full flex-col xl:flex-row  ">
-                <div className="flex h-full xl:w-2/3 items-center   p-2">
+              <div className="flex flex-col w-full py-4 xl:flex-row ">
+                <div className="flex items-center h-full p-2 xl:w-2/3">
                   <img
                     src={section.image}
                     alt="Landscape picture"
                   />
                 </div>
-                <div className="flex h-full xl:w-1/3 flex-col items-end ">
+                <div className="flex flex-col items-end h-full xl:w-1/3 ">
                   <div className="flex flex-col items-end justify-end">
-                    <h2 className="text-right pt-4"> <span className="bg-black text-right text-4xl text-white font-bold uppercase"> {section.title} </span></h2>
-                    <span className="text-right text-4xl text-green-400  font-bold uppercase my-4"> {section.price}</span>
-                    <div className="flex flex-row font-semibold text-right my-4">
+                    <h2 className="pt-4 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black"> {section.title} </span></h2>
+                    <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span>
+                    <div className="flex flex-row my-4 font-semibold text-right">
                       <div className="px-2">
                         {section.left}
                       </div>
@@ -71,16 +71,31 @@ export default function Home(props) {
           ))}
 
         </div>
-        <div className="marquee-bottom fixed bottom-0 left-0 right-0 h-20 bg-white ">        
-        <Marquee gradient={false} direction="right">
-          <span className="h-20 text-5xl flex items-center justify-center px-8 text-black font-bold" >
-          {data.post.bottom}
-          </span>
+        <div className="fixed bottom-0 left-0 right-0 h-20 bg-white marquee-bottom ">
+          <Marquee gradient={false} direction="right">
+            <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-black" >
+              {data.post.bottom}
+            </span>
 
 
-        </Marquee>
-    </div>
+          </Marquee>
+        </div>
       </div>
+
+      <div className="fixed bottom-0 flex justify-end left-8">
+        <div className="absolute max-w-xs px-8 py-4 -mt-20 -mr-40 font-semibold text-right bg-white rounded-full">
+          <span className="text-lg" > {data.post.body}</span>
+        </div>
+
+        <img
+          className="w-80"
+          src={data.post.doge}
+          alt="Landscape picture"
+        />
+      </div>
+
+
+
       {/* <code>
         <pre
           style={{

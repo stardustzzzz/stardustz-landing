@@ -59,9 +59,9 @@ const schema = defineSchema({
           ]
         },
         {
-          name: 'image',
+          name: 'doge',
           type: 'image',
-          label: 'Image',
+          label: 'doge',
         },
         {
           type: "string",

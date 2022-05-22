@@ -107,7 +107,7 @@ type PostSections {
 
 type Post implements Node & Document {
   sections: [PostSections]
-  image: String
+  doge: String
   title: String
   top: String
   bottom: String
@@ -158,7 +158,7 @@ input PostSectionsMutation {
 
 input PostMutation {
   sections: [PostSectionsMutation]
-  image: String
+  doge: String
   title: String
   top: String
   bottom: String
