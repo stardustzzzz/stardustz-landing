@@ -56,14 +56,14 @@ export default function Home(props) {
           {data.post.sections.map((section) => (
             <div key={section.title} className="px-2">
               <div className="flex flex-col w-full py-4 xl:flex-row ">
-                <div className="flex items-center h-full p-2 xl:w-2/3">
+                <div className="flex items-center h-full p-2 xl:w-3/5">
                   <img
                     style={{ background: section.color }}
                     src={section.image}
                     alt="Landscape picture"
                   />
                 </div>
-                <div className="flex flex-col items-end h-full xl:w-1/3 ">
+                <div className="flex flex-col items-end h-full xl:w-2/5 ">
                   <div className="flex flex-col items-end justify-end">
                     <h2 className="pt-4 mb-8 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black pxl"> {section.title} </span></h2>
 
