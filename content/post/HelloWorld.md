@@ -13,7 +13,7 @@ sections:
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
   - title: JOIN INVESTOR WEB3 WALLET
-    price: DONATE
+    price: ''
     right: >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
