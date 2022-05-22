@@ -30,9 +30,9 @@ contract ERC721Donations {
 
     Donation[] public list;
 
-    constructor(address _owner, address _admin, address _stardustToken) {
-        owner = payable(_owner);
-        admin = payable(_admin);
+    constructor(address _stardustToken) {
+        owner = payable(msg.sender);
+        admin = payable(msg.sender);
         stardustToken = payable(_stardustToken);
     }
 
@@ -46,7 +46,7 @@ contract ERC721Donations {
         _;
     }
 
-    function createDonation(
+    function donate(
         address donor,
         uint charityId,
         address erc721Address,
