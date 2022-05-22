@@ -1,0 +1,948 @@
+{
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "bosonToken",
+					"type": "address"
+				}
+			],
+			"name": "BosonTokenSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "chargedParticles",
+					"type": "address"
+				}
+			],
+			"name": "ChargedParticlesSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "photonSource",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "energy",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "multiplier",
+					"type": "uint256"
+				}
+			],
+			"name": "ElectrostaticAttraction",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "photonSource",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "energy",
+					"type": "uint256"
+				}
+			],
+			"name": "ElectrostaticDischarge",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "assetToken",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "multiplier",
+					"type": "uint256"
+				}
+			],
+			"name": "EsaMultiplierSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "leptonToken",
+					"type": "address"
+				}
+			],
+			"name": "LeptonTokenSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "photonToken",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "maxSupply",
+					"type": "uint256"
+				}
+			],
+			"name": "PhotonSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "protonToken",
+					"type": "address"
+				}
+			],
+			"name": "ProtonTokenSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "quarkToken",
+					"type": "address"
+				}
+			],
+			"name": "QuarkTokenSet",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "WithdrawStuckERC1155",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "WithdrawStuckERC20",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "WithdrawStuckERC721",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "WithdrawStuckEther",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "boson",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "chargedParticles",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "conductElectrostaticDischarge",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "positiveEnergy",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "getStaticCharge",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "positiveEnergy",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "initialize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "lepton",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "nftTokenAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "nftTokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "nftTokenAmount",
+					"type": "uint256"
+				}
+			],
+			"name": "onCovalentBond",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "nftTokenAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "onCovalentBreak",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "assetToken",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "creatorEnergy",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "receiverEnergy",
+					"type": "uint256"
+				}
+			],
+			"name": "onDischarge",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "assetToken",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "receiverEnergy",
+					"type": "uint256"
+				}
+			],
+			"name": "onDischargeForCreator",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "sender",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "referrer",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "onEnergize",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "oldOwner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "salePrice",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "creator",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "creatorRoyalties",
+					"type": "uint256"
+				}
+			],
+			"name": "onProtonSale",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "contractAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				},
+				{
+					"internalType": "address",
+					"name": "assetToken",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "principalAmount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "creatorEnergy",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "receiverEnergy",
+					"type": "uint256"
+				}
+			],
+			"name": "onRelease",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "photonSource",
+			"outputs": [
+				{
+					"internalType": "contract IERC20Upgradeable",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "proton",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "quark",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setBosonToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "controller",
+					"type": "address"
+				}
+			],
+			"name": "setChargedParticles",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "assetToken",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "multiplier",
+					"type": "uint256"
+				}
+			],
+			"name": "setEsaMultiplier",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setLeptonToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "maxSupply",
+					"type": "uint256"
+				}
+			],
+			"name": "setPhoton",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setProtonToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "token",
+					"type": "address"
+				}
+			],
+			"name": "setQuarkToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address payable",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "withdrawERC1155",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address payable",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "withdrawERC721",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address payable",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "tokenAddress",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "withdrawErc20",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address payable",
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "withdrawEther",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	],
+	"address": "0xFE29665A20902D6a428B5fc8bC387aE7fDA8ec60",
+	"upgradeTransaction": {
+		"hash": "0xe34b62934c7d8e3968d79c136fe9925281cfed8d363a2349c63434bb492baf2b",
+		"type": 0,
+		"accessList": null,
+		"blockHash": null,
+		"blockNumber": null,
+		"transactionIndex": null,
+		"confirmations": 0,
+		"from": "0xAC950A2C4eF5cAa35D3453F3CB8d76b40E510Bee",
+		"gasPrice": {
+			"type": "BigNumber",
+			"hex": "0x1bf08eb000"
+		},
+		"gasLimit": {
+			"type": "BigNumber",
+			"hex": "0x90c1"
+		},
+		"to": "0x387a7c63BA23B83B35aB5Bd6c44E033F9D81897c",
+		"value": {
+			"type": "BigNumber",
+			"hex": "0x00"
+		},
+		"nonce": 80,
+		"data": "0x99a88ec4000000000000000000000000fe29665a20902d6a428b5fc8bc387ae7fda8ec60000000000000000000000000344f8dc0c5994910ed102716166477d35df671b2",
+		"r": "0xa16499c65146447b7d3dee11556b6a9655e181a05202bcfae5b4e34fb3ea2797",
+		"s": "0x32fd19b5c107cc0ae649eb5e0d5767bde202e1dcec9838afd42842b861cc61ba",
+		"v": 309,
+		"creates": null,
+		"chainId": 137
+	}
+}

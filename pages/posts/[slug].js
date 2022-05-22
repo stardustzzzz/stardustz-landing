@@ -2,9 +2,11 @@
 import { staticRequest } from "tinacms";
 import { Layout } from "../../components/Layout";
 import NFTDonate from "../../components/NFTDonate";
-import Donate from "../../components/Donate";
+import CoinsDonate from "../../components/CoinsDonate";
 import { useTina } from "tinacms/dist/edit-state";
 import Marquee from "react-fast-marquee";
+import ConnectWallet from '../../components/ConnectWallet';
+
 const query = `query getPost($relativePath: String!) {
   post(relativePath: $relativePath) {
     title
@@ -67,16 +69,17 @@ export default function Home(props) {
                   <div className="flex flex-col items-end justify-end">
                     <h2 className="pt-4 mb-8 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black pxl"> {section.title} </span></h2>
 
-                    {section.price === "donate" ? <Donate /> : null}
+                    {section.price === "donatecoins" ? <CoinsDonate /> : null}
                     {section.price === "nftdonate" ? <NFTDonate /> : null}
 
-                    <div className="flex flex-row my-4 font-semibold text-right">
+                    <div className="flex flex-col my-4 font-semibold text-right">
                       <div className="px-2">
                         {section.left}
                       </div>
                       <div className="px-2">
                         {section.right}
                       </div>
+                      {section.price === "donatecoins" ? <ConnectWallet /> : null}
                     </div>
                   </div>
                 </div>

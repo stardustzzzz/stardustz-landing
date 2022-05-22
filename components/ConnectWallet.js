@@ -110,14 +110,16 @@ const ConnectWallet = () => {
     }, []);
     
     return (
-        <Box>
-            <HStack>
+        <Box mt={6}>
             {!active ? (
-                <Button onClick={onOpen}>Connect Wallet</Button>
+                <button  onClick={onOpen} className="p-2 mr-4 text-xs font-bold text-right uppercase bg-red-300 border-4 border-black pxl-lg" mr={3}>
+                    Connect Wallet
+                </button>
             ) : (
-                <Button onClick={disconnect}>Disconnect</Button>
+                <button  onClick={disconnect} className="p-2 mr-4 text-xs font-bold text-right uppercase bg-red-300 border-4 border-black pxl-lg" mr={3} >
+                    Disconnect
+                </button>
             )}
-            </HStack>
             <SelectWalletModal isOpen={isOpen} closeModal={onClose} />
         </Box>
     )

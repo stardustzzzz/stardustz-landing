@@ -3,7 +3,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
 import Header from '../components/Header';
-import Donate from '../components/Donate';
+import Donate from '../components/CoinsDonate';
 import NFTDonate from '../components/NFTDonate';
 import MintNFT from '../components/MintNFT';
 
