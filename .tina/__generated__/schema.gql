@@ -103,6 +103,7 @@ type PostSections {
   right: String
   left: String
   image: String
+  color: String
 }
 
 type Post implements Node & Document {
@@ -154,6 +155,7 @@ input PostSectionsMutation {
   right: String
   left: String
   image: String
+  color: String
 }
 
 input PostMutation {

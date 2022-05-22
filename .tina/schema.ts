@@ -56,6 +56,11 @@ const schema = defineSchema({
               name: "image",
               type: "image"
             },
+            {
+              label: "Color",
+              name: "color",
+              type: "string"
+            },
           ]
         },
         {

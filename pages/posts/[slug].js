@@ -16,6 +16,7 @@ const query = `query getPost($relativePath: String!) {
       title
       price
       image
+      color
       left
       right
     }
