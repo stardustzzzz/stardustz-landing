@@ -2,7 +2,7 @@ import TinaProvider from "../.tina/components/TinaDynamicProvider";
 import { Web3ReactProvider } from "@web3-react/core";
 import { ethers } from "ethers";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-
+import "../styles/globals.css";
 const getLibrary = (provider) => {
   const library = new ethers.providers.Web3Provider(provider);
   library.pollingInterval = 8000; // frequency provider is polling

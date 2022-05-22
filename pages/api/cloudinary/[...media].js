@@ -16,7 +16,6 @@ export default createMediaHandler({
   authorized: async (req, _res) => {
     try {
 
-      console.log(process.env)
       if (process.env.NEXT_PUBLIC_USE_LOCAL_CLIENT) {
         return true
       }

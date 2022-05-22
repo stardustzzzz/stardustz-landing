@@ -23,14 +23,60 @@ const schema = defineSchema({
       path: "content/post",
       fields: [
         {
-          name: 'hero',
+          label: "Sections",
+          name: "sections",
+          type: "object",
+          list: true,
+          fields: [
+            {
+              label: "Title",
+              name: "title",
+              type: "string"
+            }, {
+              label: "Price",
+              name: "price",
+              type: "string"
+            }, {
+              label: "Right Column",
+              name: "right",
+              type: "string",
+              ui: {
+                component: 'textarea',
+              },
+            }, {
+              label: "Left Column",
+              name: "left",
+              type: "string",
+              ui: {
+                component: 'textarea',
+              },
+            },
+            {
+              label: "Image",
+              name: "image",
+              type: "image"
+            },
+          ]
+        },
+        {
+          name: 'doge',
           type: 'image',
-          label: 'Hero Image',
+          label: 'doge',
         },
         {
           type: "string",
           label: "Title",
           name: "title",
+        },
+        {
+          type: "string",
+          label: "Top marquee",
+          name: "top",
+        },
+        {
+          type: "string",
+          label: "Bottom marquee",
+          name: "bottom",
         },
         {
           type: "string",
@@ -44,37 +90,7 @@ const schema = defineSchema({
       ],
     },
 
-    {
-      label: "Presentation",
-      name: "presentation",
-      path: "presentations",
-      fields: [
-        {
-          label: "Section",
-          name: "sectopm",
-          type: "object",
-          list: true,
-          fields: [
-
-            {
-              label: "Title",
-              name: "title",
-              type: "string"
-            }, {
-              label: "Price",
-              name: "price",
-              type: "number"
-            },
-            {
-              label: "Image",
-              name: "image",
-              type: "image"
-            },
-
-
-          ]
-        },]
-    }]
+  ]
 });
 
 
@@ -105,6 +121,9 @@ export const tinaConfig = defineConfig({
 
         if (["post"].includes(collection.name)) {
           return `/posts/${document._sys.filename}`;
+        }
+        if (["presentations"].includes(collection.name)) {
+          return `/presentations/${document._sys.filename}`;
         }
 
         return undefined;
