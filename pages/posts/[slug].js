@@ -55,7 +55,11 @@ export default function Home(props) {
                 <div className="flex flex-col items-end h-full xl:w-1/3 ">
                   <div className="flex flex-col items-end justify-end">
                     <h2 className="pt-4 text-right"> <span className="text-4xl font-bold text-right text-white uppercase bg-black"> {section.title} </span></h2>
+
+
                     <span className="my-4 text-4xl font-bold text-right text-green-400 uppercase"> {section.price}</span>
+
+
                     <div className="flex flex-row my-4 font-semibold text-right">
                       <div className="px-2">
                         {section.left}
@@ -69,15 +73,12 @@ export default function Home(props) {
               </div>
             </div>
           ))}
-
         </div>
         <div className="fixed bottom-0 left-0 right-0 h-20 bg-white marquee-bottom ">
           <Marquee gradient={false} direction="right">
             <span className="flex items-center justify-center h-20 px-8 text-5xl font-bold text-black" >
               {data.post.bottom}
             </span>
-
-
           </Marquee>
         </div>
       </div>
