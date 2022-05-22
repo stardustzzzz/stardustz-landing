@@ -1,6 +1,6 @@
 ---
 sections:
-  - title: JOIN INVESTOR WEB3 WALLET
+  - title: give your nft
     price: nftdonate
     right: >
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -11,7 +11,7 @@ sections:
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
     color: '#9aff00'
-  - title: JOIN INVESTOR WEB3 WALLET
+  - title: Give your coins
     price: nftdonate
     right: >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -22,7 +22,7 @@ sections:
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653198984/cryptopunk_jfsxji.png
     color: '#ffff00'
-  - title: Join investor web3 wallet
+  - title: Buy NFT
     price: nftdonate
     right: >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -34,13 +34,15 @@ sections:
       dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     image: >-
-      https://res.cloudinary.com/dptakoqe5/image/upload/v1653170002/Egypt-1_zkkczb.jpg
-    color: ''
+      https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
+    color: turquoise
 doge: 'https://res.cloudinary.com/dptakoqe5/image/upload/v1653187995/doge_tlqzzv.png'
 title: 'Hello, World!'
 top: "GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B GET PRE-QUALIFIED! \U0001F42B DESERT REAL ESTATE FOR SALE \U0001F42B "
 bottom: "\U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION \U0001F42B NO MONEY DOWN \U0001F42B MYSTIC ISOLATION "
 ---
+
+
 
 
 

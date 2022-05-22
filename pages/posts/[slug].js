@@ -24,6 +24,7 @@ const query = `query getPost($relativePath: String!) {
 }
 `;
 
+
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({
@@ -31,6 +32,12 @@ export default function Home(props) {
     variables: props.variables,
     data: props.data,
   });
+  let dogeOpen = false;
+
+  function toggleDoge() {
+    dogeOpen = !dogeOpen;
+    console.log("dogeOpen", dogeOpen);
+  }
 
   return (
     <Layout>
@@ -87,15 +94,10 @@ export default function Home(props) {
       </div>
 
       <div className="fixed bottom-0 flex justify-end left-8">
-        <div className="absolute max-w-xs px-8 py-4 -mt-0 -mr-32 font-semibold text-right bg-white rounded-full shadow-md">
-          <span className="text-lg" > {data.post.body}</span>
+        <div className={`absolute max-w-xs px-8 py-4  -mr-20 font-semibold text-right bg-white border-4 border-black`} >
+          <span className="text-lg pxl" > {data.post.body}</span>
         </div>
-
-        <img
-          className="w-80"
-          src={data.post.doge}
-          alt="doge"
-        />
+        <img onClick={toggleDoge} className="cursor-pointer w-44" src={data.post.doge} alt="Doge" />
       </div>
 
 
