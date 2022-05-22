@@ -35,7 +35,7 @@ export default function Home(props) {
         <div className="marquee-top fixed top-0 left-0 right-0 h-20 b bg-white ">
           
         <Marquee gradient={false}>
-        <span class="h-20 text-5xl flex items-center justify-center px-8 text-red-500 font-bold">
+        <span className="h-20 text-5xl flex items-center justify-center px-8 text-red-500 font-bold">
           {data.post.top}
           </span>
 
@@ -73,7 +73,7 @@ export default function Home(props) {
         </div>
         <div className="marquee-bottom fixed bottom-0 left-0 right-0 h-20 bg-white ">        
         <Marquee gradient={false} direction="right">
-          <span class="h-20 text-5xl flex items-center justify-center px-8 text-black font-bold" >
+          <span className="h-20 text-5xl flex items-center justify-center px-8 text-black font-bold" >
           {data.post.bottom}
           </span>
 
