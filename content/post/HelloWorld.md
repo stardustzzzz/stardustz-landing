@@ -1,7 +1,7 @@
 ---
 sections:
   - title: 'No, we don''t want no scrub'
-    price: donatecoins
+    price: nftdonate
     right: >
       Charities have much better accessibility to the money donated. Crypto is
       fast and transparent. Ultimately making the non-profits even more
@@ -13,7 +13,7 @@ sections:
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
     color: '#9aff00'
   - title: 'Back to life, Back to reality'
-    price: nftdonate
+    price: donatecoins
     right: >
       Give purpose to your NFTs. From a regretted purchase to a valued donation
       item. Donated NFTs are sorted into baskets, combining a variety of NFTs.
@@ -53,6 +53,7 @@ title: >-
 top: " 99.9% OF CHARITIES HAVE STILL TO ACCEPT CRYPTO \U0001F4B2\U0001F680\U0001F911 $471 BILLION WENT TO CHARITIES IN 2020 IN THE US \U0001F4B2\U0001F680\U0001F911  FIDELITY CHARITABLE DONATED $274 MILLION IN CRYPTO IN 2022, 4x MORE THAN IN DOLLARS IN 2019 \U0001F4B2\U0001F680\U0001F911 A CRYPTO PUNK WORTH $233,000 WAS DONATED TO UKRAINE FUNDRAISING CAMPAIGN \U0001F4B2\U0001F680\U0001F911"
 bottom: " GIVE NFTS A PURPOSE\U0001F4B2\U0001F680\U0001F911 MAKE THE WORLD A BETTER PLACE \U0001F4B2\U0001F680\U0001F911 DONATE MORE WITHOUT SPENDING \U0001F4B2\U0001F680\U0001F911 EDUCATE THE CHILDREN \U0001F4B2\U0001F680\U0001F911 SAVE THE PLANET \U0001F4B2\U0001F680\U0001F911 FEED THE ANIMALS \U0001F4B2\U0001F680\U0001F911 GIVE NFTS A PURPOSE\U0001F4B2\U0001F680\U0001F911 MAKE THE WORLD A BETTER PLACE \U0001F4B2\U0001F680\U0001F911 DONATE MORE WITHOUT SPENDING \U0001F4B2\U0001F680\U0001F911 EDUCATE THE CHILDREN \U0001F4B2\U0001F680\U0001F911 SAVE THE PLANET \U0001F4B2\U0001F680\U0001F911"
 ---
+
 
 
 Next thing, I buy Elon Musk to put humanity back in, and distribute his money to Star⭐️Dust
