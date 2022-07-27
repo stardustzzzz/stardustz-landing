@@ -11,7 +11,7 @@ sections:
     left: ''
     image: >-
       https://res.cloudinary.com/dptakoqe5/image/upload/v1653188670/ape_uhzscc.png
-    color: '#9aff00'
+    color: '#ff0000'
   - title: 'Back to life, Back to reality'
     price: donatecoins
     right: >
