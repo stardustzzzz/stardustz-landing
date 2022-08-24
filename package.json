@@ -19,7 +19,7 @@
     "@ethersproject/providers": "^5.6.7",
     "@openzeppelin/cli": "^2.8.2",
     "@openzeppelin/contracts": "^4.6.0",
-    "@tinacms/auth": "^0.50.2",
+    "@tinacms/auth": "^0.50.4",
     "@transak/transak-sdk": "^1.0.31",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
