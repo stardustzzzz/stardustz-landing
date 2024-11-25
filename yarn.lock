@@ -3380,10 +3380,12 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tinacms/auth@^0.50.2":
-  version "0.50.2"
-  resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-0.50.2.tgz#d44998aac125a68d96d097e49ff84d1c1ff7a7c2"
-  integrity sha512-5oBWtkXG8vu/W9txQrcIb7r2GC6XlgpPsO2EKdjGF4gTWZVlwah73OHqL/QogZWIbZ/4znPL1QkZVwGZuYURiw==
+"@tinacms/auth@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@tinacms/auth/-/auth-1.0.9.tgz#7b3948a511954ea785a422b65428fcf78d133885"
+  integrity sha512-0ACF/sDqGE91B0qeMAVJuMCckPcDec8teG8ziRHKIjfRD006NEMB1yM0feXxHXpSOCV92vs+s5+KDwynTJKhaA==
+  dependencies:
+    fetch-ponyfill "^7.1.0"
 
 "@tinacms/cli@^0.60.15":
   version "0.60.17"
